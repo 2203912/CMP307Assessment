@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _307Assessment.mssql2203912DataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,6 @@ namespace _307Assessment
 {
     public partial class Form2 : Form
     {
-        mssql2203912DataSet MyDataBase = new mssql2203912DataSet();
 
         mssql2203912DataSetTableAdapters._307_HardwareTableAdapter HardwareAdapter = new mssql2203912DataSetTableAdapters._307_HardwareTableAdapter();
 
@@ -27,6 +27,30 @@ namespace _307Assessment
         {
            
             this.HardwareAdapter.Fill(this.mssql2203912DataSet._307_Hardware);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddHardwareToDatabaseButton_Click(object sender, EventArgs e)
+        {
+
+            mssql2203912Entities _307_Hardware = new mssql2203912Entities();
+
+            C307_Hardware newHardware = new C307_Hardware();
+            newHardware.HardwareID = HardwareIDTextBox.Text;
+            newHardware.Name = HardwareNameTextBox.Text;
+            newHardware.Model = HardwareModelTextBox.Text;
+            newHardware.Manufacturer = HardwareManufacturerTextBox.Text;
+            newHardware.Type = HardwareTypeTextBox.Text;
+            newHardware.IP_Address = HardwareIPAddressTextBox.Text;
+
+            _307_Hardware.C307_Hardware.Add(newHardware);
+
+            _307_Hardware.SaveChanges();
+
         }
     }
 }

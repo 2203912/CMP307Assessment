@@ -20,9 +20,23 @@ namespace _307Assessment
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            Form2 StaffPage = new Form2(); 
-            StaffPage.ShowDialog();
+            mssql2203912Entities _307_Staff = new mssql2203912Entities();
+
+            /*var myUser = C307_Staff.FirstorDefault(u => u.Email.Equals(email.Email) && u.Password.Equals(email.Password));
+
+            if (myUser != null)
+            {
+                Application.Run(new Form2());
+            }
+            else
+            {
+                MsgBox.Show("The entered credentials were incorrect");
+            }*/
         }
 
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -240,7 +240,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1295, 675);
+            this.ClientSize = new System.Drawing.Size(1078, 391);
             this.Controls.Add(this.AddHardwareToDatabaseButton);
             this.Controls.Add(this.HardwareIPAddressTextBox);
             this.Controls.Add(this.HardwareTypeTextBox);
@@ -257,7 +257,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "AddToDatabase";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hardwareBindingSource)).EndInit();

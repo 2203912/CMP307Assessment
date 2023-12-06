@@ -8,9 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using _307Assessment;
 
 namespace _307Assessment
 {
+    
+    
     public partial class Form1 : Form
     {
         public Form1()
@@ -20,18 +23,11 @@ namespace _307Assessment
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            mssql2203912Entities _307_Staff = new mssql2203912Entities();
 
-            /*var myUser = C307_Staff.FirstorDefault(u => u.Email.Equals(email.Email) && u.Password.Equals(email.Password));
+            //mssql2203912Entities _307_Staff = new mssql2203912Entities();
+            StaffPage StaffPage = new StaffPage();
+            StaffPage.ShowDialog();
 
-            if (myUser != null)
-            {
-                Application.Run(new Form2());
-            }
-            else
-            {
-                MsgBox.Show("The entered credentials were incorrect");
-            }*/
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

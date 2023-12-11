@@ -27,6 +27,7 @@ namespace _307Assessment
         {
            
             this.HardwareAdapter.Fill(this.mssql2203912DataSet._307_Hardware);
+           
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace _307Assessment
             mssql2203912Entities _307_Hardware = new mssql2203912Entities();
 
             C307_Hardware newHardware = new C307_Hardware();
-            newHardware.HardwareID = HardwareIDTextBox.Text;
+            //newHardware.HardwareID = HardwareIDTextBox.Text;
             newHardware.Name = HardwareNameTextBox.Text;
             newHardware.Model = HardwareModelTextBox.Text;
             newHardware.Manufacturer = HardwareManufacturerTextBox.Text;

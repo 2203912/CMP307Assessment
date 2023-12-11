@@ -12,8 +12,7 @@ using _307Assessment;
 
 namespace _307Assessment
 {
-    
-    
+   
     public partial class Form1 : Form
     {
         public Form1()
@@ -24,9 +23,33 @@ namespace _307Assessment
         private void LoginButton_Click(object sender, EventArgs e)
         {
 
-            //mssql2203912Entities _307_Staff = new mssql2203912Entities();
-            StaffPage StaffPage = new StaffPage();
-            StaffPage.ShowDialog();
+
+            string email = EmailTextBox.Text;
+            string password = PasswordTextBox.Text;
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter both email and password.");
+                return;
+            }
+
+
+            using (mssql2203912Entities _307_Staff = new mssql2203912Entities())
+            {
+                // Check if a user with the provided email and password exists
+                var user = _307_Staff.C307_Staff.FirstOrDefault(u => u.Email == email && u.Password == password);
+
+                if (user != null)
+                {
+                    MessageBox.Show("Login successful!");
+                    StaffPage StaffPage = new StaffPage();
+                    StaffPage.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid email or password. Please try again.");
+                }
+            }
 
         }
 

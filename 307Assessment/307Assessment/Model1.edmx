@@ -9,12 +9,23 @@
           <Key>
             <PropertyRef Name="HardwareID" />
           </Key>
-          <Property Name="HardwareID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="HardwareID" Type="tinyint" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="20" />
           <Property Name="Model" Type="varchar" MaxLength="50" />
           <Property Name="Manufacturer" Type="nchar" MaxLength="20" />
           <Property Name="Type" Type="nchar" MaxLength="20" />
           <Property Name="IP Address" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'mssql2203912.dbo.307.Software' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="307_Software">
+          <Key>
+            <PropertyRef Name="SoftwareID" />
+          </Key>
+          <Property Name="SoftwareID" Type="tinyint" Nullable="false" />
+          <Property Name="OperatingSystem" Type="varchar" MaxLength="50" />
+          <Property Name="Version" Type="varchar" MaxLength="50" />
+          <Property Name="Manufacturer" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="307_Staff">
           <Key>
@@ -30,6 +41,14 @@
         <EntityContainer Name="mssql2203912ModelStoreContainer">
           <EntitySet Name="307_Hardware" EntityType="Self.307_Hardware" Schema="dbo" Table="307.Hardware" store:Type="Tables" />
           <EntitySet Name="307_Staff" EntityType="Self.307_Staff" Schema="dbo" Table="307.Staff" store:Type="Tables" />
+          <EntitySet Name="307_Software" EntityType="Self.307_Software" store:Type="Tables" store:Schema="dbo" store:Name="307.Software">
+            <DefiningQuery>SELECT 
+    [307_Software].[SoftwareID] AS [SoftwareID], 
+    [307_Software].[OperatingSystem] AS [OperatingSystem], 
+    [307_Software].[Version] AS [Version], 
+    [307_Software].[Manufacturer] AS [Manufacturer]
+    FROM [dbo].[307.Software] AS [307_Software]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -40,7 +59,7 @@
           <Key>
             <PropertyRef Name="HardwareID" />
           </Key>
-          <Property Name="HardwareID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HardwareID" Type="Byte" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Manufacturer" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
@@ -58,9 +77,19 @@
           <Property Name="Department" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="C307_Software">
+          <Key>
+            <PropertyRef Name="SoftwareID" />
+          </Key>
+          <Property Name="SoftwareID" Type="Byte" Nullable="false" />
+          <Property Name="OperatingSystem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Manufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityContainer Name="mssql2203912Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C307_Hardware" EntityType="Self.C307_Hardware" />
           <EntitySet Name="C307_Staff" EntityType="Self.C307_Staff" />
+          <EntitySet Name="C307_Software" EntityType="Self.C307_Software" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -89,6 +118,16 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Department" ColumnName="Department" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C307_Software">
+            <EntityTypeMapping TypeName="mssql2203912Model.C307_Software">
+              <MappingFragment StoreEntitySet="307_Software">
+                <ScalarProperty Name="SoftwareID" ColumnName="SoftwareID" />
+                <ScalarProperty Name="OperatingSystem" ColumnName="OperatingSystem" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

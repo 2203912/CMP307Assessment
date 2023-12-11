@@ -12,13 +12,11 @@ namespace _307Assessment
     using System;
     using System.Collections.Generic;
     
-    public partial class C307_Hardware
+    public partial class C307_Software
     {
-        public byte HardwareID { get; set; }
-        public string Name { get; set; }
-        public string Model { get; set; }
+        public byte SoftwareID { get; set; }
+        public string OperatingSystem { get; set; }
+        public string Version { get; set; }
         public string Manufacturer { get; set; }
-        public string Type { get; set; }
-        public string IP_Address { get; set; }
     }
 }

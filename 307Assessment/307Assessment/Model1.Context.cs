@@ -27,5 +27,6 @@ namespace _307Assessment
     
         public virtual DbSet<C307_Hardware> C307_Hardware { get; set; }
         public virtual DbSet<C307_Staff> C307_Staff { get; set; }
+        public virtual DbSet<C307_Software> C307_Software { get; set; }
     }
 }

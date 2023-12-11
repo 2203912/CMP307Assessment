@@ -33,5 +33,17 @@ namespace _307Assessment
             DeleteFromDatabase Form = new DeleteFromDatabase();
             Form.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddToSoftware Form = new AddToSoftware();
+            Form.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DeleteFromSoftware Form = new DeleteFromSoftware();
+            Form.ShowDialog();
+        }
     }
 }

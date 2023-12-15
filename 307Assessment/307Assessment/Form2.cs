@@ -12,10 +12,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _307Assessment
 {
+
+
     public partial class Form2 : Form
     {
 
-        mssql2203912DataSetTableAdapters._307_HardwareTableAdapter HardwareAdapter = new mssql2203912DataSetTableAdapters._307_HardwareTableAdapter();
+        public mssql2203912DataSetTableAdapters._307_HardwareTableAdapter HardwareAdapter = new mssql2203912DataSetTableAdapters._307_HardwareTableAdapter();
 
 
         public Form2()
@@ -41,7 +43,7 @@ namespace _307Assessment
             mssql2203912Entities _307_Hardware = new mssql2203912Entities();
 
             C307_Hardware newHardware = new C307_Hardware();
-            //newHardware.HardwareID = HardwareIDTextBox.Text;
+            newHardware.HardwareID = Convert.ToByte(HardwareIDTextBox.Text);
             newHardware.Name = HardwareNameTextBox.Text;
             newHardware.Model = HardwareModelTextBox.Text;
             newHardware.Manufacturer = HardwareManufacturerTextBox.Text;

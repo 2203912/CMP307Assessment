@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using _307Assessment.mssql2203912DataSetTableAdapters;
+
 
 namespace _307Assessment
 {
@@ -49,6 +52,11 @@ namespace _307Assessment
                     _307_Software.Configuration.ValidateOnSaveEnabled = oldValidateOnSaveEnabled;
                 }
             }
+        }
+
+        private void DeleteFromSoftware_Load(object sender, EventArgs e)
+        {
+            //this._307_SoftwareTableAdapter.Fill(this.mssql2203912DataSet3._307_Software);
         }
     }
 }

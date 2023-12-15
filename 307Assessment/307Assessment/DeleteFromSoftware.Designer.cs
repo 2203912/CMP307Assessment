@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.mssql2203912DataSet3 = new _307Assessment.mssql2203912DataSet3();
-            this.softwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.softwareIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operatingSystemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.versionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.softwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mssql2203912DataSet3 = new _307Assessment.mssql2203912DataSet3();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DeleteFromSoftwareDatabase = new System.Windows.Forms.TextBox();
             this.DeleteSoftware = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mssql2203912DataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.softwareBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mssql2203912DataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -59,16 +59,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(444, 384);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // mssql2203912DataSet3
-            // 
-            this.mssql2203912DataSet3.DataSetName = "mssql2203912DataSet3";
-            this.mssql2203912DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // softwareBindingSource
-            // 
-            this.softwareBindingSource.DataMember = "307.Software";
-            this.softwareBindingSource.DataSource = this.mssql2203912DataSet3;
             // 
             // softwareIDDataGridViewTextBoxColumn
             // 
@@ -93,6 +83,16 @@
             this.manufacturerDataGridViewTextBoxColumn.DataPropertyName = "Manufacturer";
             this.manufacturerDataGridViewTextBoxColumn.HeaderText = "Manufacturer";
             this.manufacturerDataGridViewTextBoxColumn.Name = "manufacturerDataGridViewTextBoxColumn";
+            // 
+            // softwareBindingSource
+            // 
+            this.softwareBindingSource.DataMember = "307.Software";
+            this.softwareBindingSource.DataSource = this.mssql2203912DataSet3;
+            // 
+            // mssql2203912DataSet3
+            // 
+            this.mssql2203912DataSet3.DataSetName = "mssql2203912DataSet3";
+            this.mssql2203912DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -141,9 +141,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "DeleteFromSoftware";
             this.Text = "DeleteFromSoftware";
+            this.Load += new System.EventHandler(this.DeleteFromSoftware_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mssql2203912DataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.softwareBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mssql2203912DataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

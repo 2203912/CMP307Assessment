@@ -7,29 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using _307Assessment.mssql2203912DataSetTableAdapters;
-using System.Data.Entity;
 
-namespace _307Assessment
+namespace test
 {
-    public partial class DeleteFromDatabase : Form
+    public partial class Form1 : Form
     {
-
-
-        private void DeleteFromDatabase_Load(object sender, EventArgs e)
-        {
-
-            //this._307_HardwareTableAdapter.Fill(this.mssql2203912DataSet1._307_Hardware);
-
-        }
-
-        public DeleteFromDatabase()
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void DeleteFromHardwareButton_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             mssql2203912Entities _307_Hardware = new mssql2203912Entities();
 
@@ -62,7 +50,7 @@ namespace _307Assessment
             }
         }
 
-        private void DeleteFromDatabase_Load_1(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
